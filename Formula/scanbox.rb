@@ -1,8 +1,8 @@
 class Scanbox < Formula
   desc "Scan from older HP MFPs that macOS dropped support for"
   homepage "https://github.com/vincentcr/scanbox"
-  url "https://github.com/vincentcr/scanbox/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "83253c95d6dcafa8d11d7666c7a647db2c3005294242a75f46be2663990cd7b4"
+  url "https://github.com/vincentcr/scanbox/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "581f0fec9f029551ad7fb166d3ff41d07549e777ccd87169aed332eba6fe4ca1"
   license "MIT"
 
   # The VM is a runtime component, created on first scan -- but lima has to be
@@ -23,7 +23,7 @@ class Scanbox < Formula
     <<~EOS
       Discover your scanner and save the config:
 
-        scanbox find
+        scanbox setup
 
       Then scan with:
 

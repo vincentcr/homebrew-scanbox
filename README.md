@@ -6,5 +6,5 @@ older HP MFPs that macOS dropped support for.
 ```sh
 brew tap vincentcr/scanbox
 brew install scanbox
-scanner find
+scanbox find
 ```

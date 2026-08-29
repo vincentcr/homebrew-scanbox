@@ -1,8 +1,8 @@
 class Scanbox < Formula
   desc "Scan from older HP MFPs that macOS dropped support for"
   homepage "https://github.com/vincentcr/scanbox"
-  url "https://github.com/vincentcr/scanbox/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "bb2a239096c4988704164d296a8e5784dbfd5eb6f23c3e3a04a2d9d71be3528e"
+  url "https://github.com/vincentcr/scanbox/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "83253c95d6dcafa8d11d7666c7a647db2c3005294242a75f46be2663990cd7b4"
   license "MIT"
 
   # The VM is a runtime component, created on first scan -- but lima has to be
@@ -24,6 +24,10 @@ class Scanbox < Formula
       Discover your scanner and save the config:
 
         scanbox find
+
+      Then scan with:
+
+        scanbox scan
 
       The Debian VM is created on first scan (a few minutes, once) and stops
       itself after 60 idle minutes. Scans land in ~/Pictures/Scans.

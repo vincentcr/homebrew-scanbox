@@ -1,8 +1,8 @@
 class Scanbox < Formula
   desc "Scan from older HP MFPs that macOS dropped support for"
   homepage "https://github.com/vincentcr/scanbox"
-  url "https://github.com/vincentcr/scanbox/archive/refs/tags/v0.4.3.tar.gz"
-  sha256 "3ed871b9927dae8cb72a0aeeb218c405fe9ff3e05ed27bf78665e1052fbbd578"
+  url "https://github.com/vincentcr/scanbox/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "147b002ea14b1e871cb1f16bc4ff1d55c8d739da012448211cc0533b60cbbb89"
   license "MIT"
 
   # The VM is a runtime component, created on first scan -- but lima has to be
@@ -11,10 +11,17 @@ class Scanbox < Formula
   depends_on "lima"
   depends_on :macos
 
+  # No python dependency on purpose. The host side is Python but imports only
+  # the standard library -- no virtualenv, nothing to build -- and Homebrew
+  # itself requires the Command Line Tools, which ship python3. Anything that
+  # can install this can already run it. bin/scanbox picks an interpreter by
+  # asking it its version, so a too-old pyenv shim on PATH is stepped over
+  # rather than inherited.
   def install
-    # scanner resolves its own location through symlinks, so it finds lib/ and
-    # provision/ from libexec no matter how it is invoked.
-    libexec.install "bin", "lib", "provision", "scanbox.yaml", "config.example"
+    # bin/scanbox resolves its own location through symlinks, so it finds the
+    # scanbox package, lib/ and provision/ under libexec however it is invoked.
+    libexec.install "bin", "lib", "provision", "scanbox", "scanbox.yaml",
+                    "config.example"
     bin.install_symlink libexec/"bin/scanbox"
     doc.install "README.md"
   end

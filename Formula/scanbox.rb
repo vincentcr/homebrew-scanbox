@@ -1,8 +1,8 @@
 class Scanbox < Formula
   desc "Scan from older HP MFPs that macOS dropped support for"
   homepage "https://github.com/vincentcr/scanbox"
-  url "https://github.com/vincentcr/scanbox/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "1ce139ec35ad078836d0e958d879f6bdbe144fc096bcefce711cc8e3b28731d4"
+  url "https://github.com/vincentcr/scanbox/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "3ed871b9927dae8cb72a0aeeb218c405fe9ff3e05ed27bf78665e1052fbbd578"
   license "MIT"
 
   # The VM is a runtime component, created on first scan -- but lima has to be
